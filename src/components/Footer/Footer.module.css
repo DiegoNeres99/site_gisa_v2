@@ -1,0 +1,119 @@
+.footer {
+  background: #1E1510;
+  color: rgba(255,255,255,.65);
+  position: relative;
+}
+
+/* Gold top accent */
+.topLine {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--c-primary), var(--c-primary-light), var(--c-primary), transparent);
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.4fr;
+  gap: 56px;
+  padding-top: 64px;
+  padding-bottom: 48px;
+}
+
+/* ── Brand ── */
+.brand { display: flex; flex-direction: column; }
+.logoMark {
+  font-size: 1.2rem;
+  color: var(--c-primary);
+  margin-bottom: 6px;
+}
+.logoName {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--c-white);
+  letter-spacing: .02em;
+  margin-bottom: 2px;
+}
+.logoTitle {
+  font-size: .68rem;
+  color: var(--c-primary);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+.brandDesc {
+  font-size: .83rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,.45);
+  margin-bottom: 24px;
+  max-width: 280px;
+}
+.socials { display: flex; gap: 10px; }
+.social {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.6);
+  transition: var(--t-fast);
+}
+.social:hover {
+  background: var(--c-primary);
+  border-color: var(--c-primary);
+  color: var(--c-white);
+}
+
+/* ── Column title ── */
+.colTitle {
+  font-family: var(--font-body);
+  font-size: .68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--c-primary);
+  margin-bottom: 20px;
+}
+
+/* ── Nav links ── */
+.links { display: flex; flex-direction: column; gap: 10px; }
+.link {
+  font-size: .83rem;
+  color: rgba(255,255,255,.5);
+  transition: var(--t-fast);
+}
+.link:hover { color: var(--c-primary); }
+
+/* ── Contact info ── */
+.contacts { display: flex; flex-direction: column; gap: 14px; }
+.contact {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255,255,255,.5);
+}
+.contact svg { flex-shrink: 0; margin-top: 2px; }
+.contactText { font-size: .83rem; line-height: 1.5; }
+
+/* ── Bottom bar ── */
+.bottom {
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.bottom .container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.copy {
+  font-size: .75rem;
+  color: rgba(255,255,255,.25);
+  letter-spacing: .04em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px)  { .grid { grid-template-columns: 1fr 1fr; gap: 36px; } }
+@media (max-width: 560px)  { .grid { grid-template-columns: 1fr; gap: 32px; } }

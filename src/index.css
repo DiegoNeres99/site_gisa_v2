@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --c-primary:       #C9A96E;
+  --c-primary-light: #F0E6D3;
+  --c-primary-dark:  #A8824A;
+  --c-rose:          #F5ECEC;
+  --c-rose-mid:      #E8D5D5;
+  --c-bg:            #FAF8F5;
+  --c-bg-warm:       #F5EFE8;
+  --c-bg-alt:        #FFFFFF;
+  --c-bg-dark:       #2C1F1A;
+  --c-green:         #4A7C59;
+  --c-green-light:   #EAF2ED;
+  --c-text:          #2D2420;
+  --c-text-muted:    #7A6F6A;
+  --c-text-light:    #A89590;
+  --c-white:         #FFFFFF;
+  --c-border:        #EAE4DC;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', -apple-system, sans-serif;
+
+  --sh-soft:   0 2px 16px rgba(44,32,24,.07);
+  --sh-card:   0 4px 28px rgba(44,32,24,.10);
+  --sh-hover:  0 10px 48px rgba(44,32,24,.16);
+  --sh-gold:   0 6px 28px rgba(201,169,110,.35);
+
+  --r-sm:   8px;
+  --r-md:   14px;
+  --r-lg:   22px;
+  --r-full: 9999px;
+
+  --t-fast:   .2s ease;
+  --t-smooth: .35s cubic-bezier(.4,0,.2,1);
+
+  --max-w: 1200px;
+  --px: clamp(20px, 5vw, 48px);
+  --py-section: clamp(72px, 10vw, 112px);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--c-text);
+  background: var(--c-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: var(--font-body); }
+ul { list-style: none; }
+
+section[id] { scroll-margin-top: 76px; }
+
+/* Global container */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding-left: var(--px);
+  padding-right: var(--px);
+}
+
+/* Global section header */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--c-primary);
+  margin-bottom: 16px;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--c-bg); }
+::-webkit-scrollbar-thumb { background: var(--c-primary); border-radius: 3px; }

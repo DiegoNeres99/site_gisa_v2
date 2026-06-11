@@ -1,0 +1,68 @@
+.btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 200;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37,211,102,.45);
+  transition: var(--t-smooth);
+}
+.btn:hover {
+  background: #1ebe5b;
+  transform: scale(1.1);
+  box-shadow: 0 10px 32px rgba(37,211,102,.55);
+}
+
+/* Pulse ring */
+.pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25D366;
+  animation: pulse 2.5s cubic-bezier(.4,0,.6,1) infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1);   opacity: .4; }
+  50%       { transform: scale(1.5); opacity: 0;  }
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  background: var(--c-bg-dark);
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 7px 12px;
+  border-radius: var(--r-sm);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(6px);
+  transition: var(--t-fast);
+}
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%; right: -5px;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: var(--c-bg-dark);
+}
+.btn:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 480px) {
+  .btn { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+  .tooltip { display: none; }
+}
