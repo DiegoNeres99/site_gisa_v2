@@ -27,6 +27,15 @@ export default function Hero() {
 
         {/* ── Left: copy ── */}
         <div className={styles.copy}>
+          <a
+            href="#tratamentos"
+            className={styles.ebookAlert}
+            onClick={e => { e.preventDefault(); document.querySelector('#tratamentos')?.scrollIntoView({ behavior:'smooth' }); }}
+          >
+            <span className={styles.alertIcon}>!</span>
+            <span>Ebook antipolho chegando na Hotmart</span>
+          </a>
+
           <span className="section-eyebrow">
             <span aria-hidden="true">✦</span>
             Tricologista &amp; Cosmetóloga
@@ -39,8 +48,9 @@ export default function Hero() {
 
           <p className={styles.sub}>
             Atendimento com Tricologista especializada em terapia capilar,
-            utilizando protocolos personalizados para identificar e tratar as
-            causas da queda capilar e promover a saúde dos fios.
+            utilizando protocolos personalizados para queda, saúde dos fios e
+            um novo guia especial para famílias enfrentarem piolhos com mais
+            clareza, rotina e segurança.
           </p>
 
           <div className={styles.actions}>
@@ -51,7 +61,7 @@ export default function Hero() {
             </a>
             <a href="#tratamentos" className={styles.btnSecondary}
                onClick={e => { e.preventDefault(); document.querySelector('#tratamentos')?.scrollIntoView({ behavior:'smooth' }); }}>
-              Conhecer Tratamentos
+              Ver Ebook Antipolho
             </a>
           </div>
 
@@ -89,7 +99,7 @@ export default function Hero() {
           {/* Floating pill */}
           <div className={styles.pill}>
             <span>✨</span>
-            <span>Protocolo Personalizado</span>
+            <span>Ebook Antipolho</span>
           </div>
         </div>
 

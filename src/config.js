@@ -30,6 +30,10 @@ atenção e cuidado humanizado.`,
     link: 'https://instagram.com/gisasaudecapilar',
   },
 
+  hotmart: {
+    liceEbookLink: '#hotmart-link-piolho',
+  },
+
   address: {
     street: 'Endereço pelo Google Maps',
     city: 'Localização a confirmar',

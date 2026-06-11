@@ -8,7 +8,7 @@ const navLinks = [
   { label: 'Sobre',        href: '#sobre' },
   { label: 'Tratamentos',  href: '#tratamentos' },
   { label: 'Produtos',     href: '#produtos' },
-  { label: 'Contato',      href: '#footer' },
+  { label: 'Contato',      href: '#cta' },
 ];
 
 function scrollTo(href) {

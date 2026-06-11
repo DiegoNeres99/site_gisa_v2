@@ -47,6 +47,41 @@
 /* ── Copy ── */
 .copy { display: flex; flex-direction: column; }
 
+.ebookAlert {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin-bottom: 16px;
+  padding: 8px 14px 8px 9px;
+  border: 1px solid rgba(74,124,89,.22);
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,.76);
+  color: var(--c-green);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: var(--sh-soft);
+  transition: var(--t-smooth);
+}
+.ebookAlert:hover {
+  border-color: rgba(74,124,89,.42);
+  transform: translateY(-2px);
+}
+.alertIcon {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--c-green);
+  color: var(--c-white);
+  font-weight: 800;
+  line-height: 1;
+}
+
 .title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4.5vw, 3.2rem);
