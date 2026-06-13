@@ -18,7 +18,7 @@ const equipment = [
     available: true,
     instaPosts: [
       'https://www.instagram.com/p/DXh4uLUDhSh/',
-      'https://www.instagram.com/p/DXIFr3-EbIA/',
+      'https://www.instagram.com/reel/DXK2xGwDsJl/',
     ],
     instaCaption: [
       'Você realmente sabe como está o seu couro cabeludo… ou só imagina? 👀',

@@ -76,33 +76,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Right: photo ── */}
-        <div className={styles.visual}>
-          <div className={styles.photoRing}>
-            <div className={styles.photo}>
-              <div className={styles.photoPlaceholder}>
-                <span className={styles.photoInitial}>G</span>
-                <p className={styles.photoHint}>Foto da profissional</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Floating credential badge */}
-          <div className={styles.badge}>
-            <span className={styles.badgeIcon}>🎓</span>
-            <div>
-              <p className={styles.badgeTop}>Certificada</p>
-              <p className={styles.badgeBot}>em Tricologia</p>
-            </div>
-          </div>
-
-          {/* Floating pill */}
-          <div className={styles.pill}>
-            <span>✨</span>
-            <span>Ebook Antipolho</span>
-          </div>
-        </div>
-
       </div>
     </section>
   );

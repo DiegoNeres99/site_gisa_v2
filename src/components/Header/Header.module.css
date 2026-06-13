@@ -2,14 +2,17 @@
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 100;
-  background: rgba(250,248,245,.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border-bottom: 1px solid transparent;
   transition: var(--t-smooth);
 }
-.header.scrolled {
+.header.scrolled,
+.header.menuOpen {
   background: rgba(250,248,245,.97);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom-color: var(--c-border);
   box-shadow: var(--sh-soft);
 }
@@ -39,18 +42,30 @@
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--c-text);
+  color: var(--c-white);
   line-height: 1.2;
   letter-spacing: .02em;
+  text-shadow: 0 2px 12px rgba(0,0,0,.28);
 }
 .logoSub {
   font-size: .62rem;
-  color: var(--c-primary);
+  color: var(--c-primary-light);
   text-transform: uppercase;
   letter-spacing: .14em;
   font-weight: 500;
   line-height: 1;
   margin-top: 2px;
+  text-shadow: 0 2px 12px rgba(0,0,0,.28);
+}
+.header.scrolled .logoName,
+.header.menuOpen .logoName {
+  color: var(--c-text);
+  text-shadow: none;
+}
+.header.scrolled .logoSub,
+.header.menuOpen .logoSub {
+  color: var(--c-primary);
+  text-shadow: none;
 }
 
 /* ── Desktop nav ── */
@@ -62,14 +77,25 @@
 }
 .navLink {
   font-size: .83rem;
-  color: var(--c-text-muted);
+  color: rgba(255,255,255,.82);
   padding: 7px 13px;
   border-radius: var(--r-full);
   transition: var(--t-fast);
   font-weight: 400;
   white-space: nowrap;
+  text-shadow: 0 2px 12px rgba(0,0,0,.28);
 }
 .navLink:hover {
+  color: var(--c-white);
+  background: rgba(255,255,255,.14);
+}
+.header.scrolled .navLink,
+.header.menuOpen .navLink {
+  color: var(--c-text-muted);
+  text-shadow: none;
+}
+.header.scrolled .navLink:hover,
+.header.menuOpen .navLink:hover {
   color: var(--c-text);
   background: var(--c-primary-light);
 }
@@ -100,13 +126,21 @@
   display: none;
   align-items: center;
   justify-content: center;
-  color: var(--c-text);
+  color: var(--c-white);
   padding: 6px;
   margin-left: auto;
   border-radius: var(--r-sm);
   transition: var(--t-fast);
 }
-.toggle:hover { background: var(--c-bg-warm); }
+.toggle:hover { background: rgba(255,255,255,.14); }
+.header.scrolled .toggle,
+.header.menuOpen .toggle {
+  color: var(--c-text);
+}
+.header.scrolled .toggle:hover,
+.header.menuOpen .toggle:hover {
+  background: var(--c-bg-warm);
+}
 
 /* ── Mobile menu ── */
 .mobile {

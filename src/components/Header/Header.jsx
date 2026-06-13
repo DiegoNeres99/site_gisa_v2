@@ -33,7 +33,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.menuOpen : ''}`}>
       <div className={`container ${styles.inner}`}>
 
         {/* ── Logo ── */}

@@ -17,10 +17,11 @@ export default function About() {
         <div className={styles.photoCol}>
           <div className={styles.photoOuter}>
             <div className={styles.photoInner}>
-              <div className={styles.photoPlaceholder}>
-                <span className={styles.photoInitial}>G</span>
-                <p className={styles.photoHint}>Foto da especialista</p>
-              </div>
+              <img
+                className={styles.photo}
+                src="/Foto_sobre_mim.jpg"
+                alt="Retrato da especialista Gisa"
+              />
             </div>
           </div>
           {/* decorative dots */}

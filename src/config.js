@@ -1,7 +1,7 @@
 // ─── Contact & Business Info ────────────────────────────────────────────────
 // Edit these values to customize the landing page
 
-const WHATSAPP_NUMBER = '55XXXXXXXXXX'; // Only digits, e.g. 5511999999999
+const WHATSAPP_NUMBER = '5543999182766'; // Only digits, e.g. 5511999999999
 const WHATSAPP_MESSAGE = encodeURIComponent(
   'Olá! Gostaria de agendar uma avaliação capilar.'
 );
@@ -11,13 +11,16 @@ export const config = {
     name: 'Gisa',
     fullName: 'Gisa Saúde Capilar',
     title: 'Tricologista & Cosmetóloga',
-    bio: `Sou Tricologista e Cosmetóloga com formação especializada em saúde capilar. 
-Ao longo da minha trajetória, desenvolvi protocolos exclusivos baseados em diagnóstico 
-individual, porque cada paciente possui uma necessidade diferente e merece um cuidado único.
+    bio: `Prazer, eu sou Gislaine de Fátima (Gisa).
+    Sou terapeuta capilar, tricologista, cosmetóloga e cabeleireira com mais de 18 anos de experiência no mercado da beleza. Ao longo da minha trajetória, me especializei em saúde capilar, recuperação dos fios naturais, transição capilar e cuidados com cabelos cacheados e crespos.
 
-Meu trabalho é focado em identificar as causas reais da queda capilar, promover o 
-fortalecimento dos fios e devolver a saúde do couro cabeludo — sempre com ciência, 
-atenção e cuidado humanizado.`,
+    Possuo formação em Terapia Capilar, Tricologia e Cosmetologia, além de diversos cursos e congressos na área da saúde capilar, incluindo especializações realizadas pela ABT.
+
+    Meu propósito é ajudar mulheres a recuperarem a saúde, a beleza e a confiança nos seus cabelos através de orientações práticas, tratamentos personalizados e acompanhamento profissional.
+
+    Atuo com cortes terapêuticos, Big Chop, protocolos capilares individualizados e consultorias para ajuste de produtos, auxiliando cada cliente a encontrar a melhor rotina para seu cabelo — esteja ela perto ou em qualquer lugar do Brasil.
+
+    Acredito que todo cabelo pode alcançar seu melhor potencial quando recebe os cuidados corretos, e estou aqui para tornar esse processo mais simples, seguro e eficiente para você.`,
   },
 
   whatsapp: {
