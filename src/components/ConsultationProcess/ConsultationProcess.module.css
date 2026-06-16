@@ -1,6 +1,7 @@
 .section {
   padding: var(--py-section) 0;
   background: var(--c-bg-alt);
+  overflow: hidden;
 }
 
 /* ── Header ── */
