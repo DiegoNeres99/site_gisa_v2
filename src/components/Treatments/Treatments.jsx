@@ -3,12 +3,12 @@ import { config } from '../../config';
 import styles from './Treatments.module.css';
 
 const resultPhotos = [
-  { id: 'photo-1', src: '/Foto_hero2.jpg', label: 'Foto 1' },
-  { id: 'photo-2', src: '/Foto_sobre_mim.jpg', label: 'Foto 2' },
-  { id: 'photo-3', src: '/Foto_hero2.jpg', label: 'Foto 3' },
-  { id: 'photo-4', src: '/Foto_sobre_mim.jpg', label: 'Foto 4' },
-  { id: 'photo-5', src: '/Foto_hero2.jpg', label: 'Foto 5' },
-  { id: 'photo-6', src: '/Foto_sobre_mim.jpg', label: 'Foto 6' },
+  { id: 'photo-1', src: '/foto1.jpg', label: 'Foto 1' },
+  { id: 'photo-2', src: '/foto2.jpg', label: 'Foto 2' },
+  { id: 'photo-3', src: '/foto3.jpg', label: 'Foto 3' },
+  // { id: 'photo-4', src: '/Foto_sobre_mim.jpg', label: 'Foto 4' },
+  // { id: 'photo-5', src: '/Foto_hero2.jpg', label: 'Foto 5' },
+  // { id: 'photo-6', src: '/Foto_sobre_mim.jpg', label: 'Foto 6' },
 ];
 
 const faqs = [
@@ -78,7 +78,7 @@ export default function Treatments() {
               <span className={styles.ebookKicker}>Ebook exclusivo</span>
               <strong>Missão Couro Cabeludo Livre</strong>
               <span>Guia antipolho para famílias</span>
-              <div className={styles.coverSeal}>Hotmart</div>
+              {/* <div className={styles.coverSeal}>Hotmart</div> */}
             </div>
             <div className={styles.ebookPages} />
           </div>

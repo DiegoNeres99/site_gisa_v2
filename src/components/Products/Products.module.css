@@ -28,6 +28,28 @@
   line-height: 1.75;
 }
 
+/* ── Keyframes ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.10; }
+  50%      { opacity: 0.22; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes pulseCta {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.45); }
+  50%      { box-shadow: 0 0 0 14px rgba(201, 169, 110, 0); }
+}
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
 /* ── Grid ── */
 .grid {
   display: grid;
@@ -46,12 +68,37 @@
   flex-direction: column;
   transition: var(--t-smooth);
   position: relative;
+  opacity: 0;
+  animation: fadeInUp .6s ease forwards;
 }
+.card:nth-child(1)  { animation-delay: .05s; }
+.card:nth-child(2)  { animation-delay: .10s; }
+.card:nth-child(3)  { animation-delay: .15s; }
+.card:nth-child(4)  { animation-delay: .20s; }
+.card:nth-child(5)  { animation-delay: .25s; }
+.card:nth-child(6)  { animation-delay: .30s; }
+.card:nth-child(7)  { animation-delay: .35s; }
+.card:nth-child(8)  { animation-delay: .40s; }
+.card:nth-child(9)  { animation-delay: .45s; }
+.card:nth-child(10) { animation-delay: .50s; }
+.card:nth-child(11) { animation-delay: .55s; }
+.card:nth-child(12) { animation-delay: .60s; }
 .card:hover {
   box-shadow: var(--sh-hover);
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.02);
   border-color: var(--c-primary);
 }
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+  background: linear-gradient(135deg, rgba(201,169,110,.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity .4s ease;
+  pointer-events: none;
+}
+.card:hover::after { opacity: 1; }
 
 /* Badge */
 .badge {
@@ -70,14 +117,23 @@
 
 /* Image box */
 .imgBox {
-  height: 160px;
-  background: linear-gradient(135deg, var(--c-primary-light) 0%, var(--c-rose) 100%);
+  height: 200px;
+  background: var(--c-white);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   flex-shrink: 0;
+  overflow: hidden;
+}
+.productImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  transition: transform .4s ease;
+}
+.card:hover .productImg {
+  transform: scale(1.06);
 }
 .emoji { font-size: 2.4rem; line-height: 1; }
 .imgSub {
@@ -139,6 +195,194 @@
   background: var(--c-primary);
   color: var(--c-white);
   box-shadow: var(--sh-gold);
+}
+
+/* ── La Ceutica Promo Banner ── */
+.promoBanner {
+  position: relative;
+  background: linear-gradient(135deg, #2C1F1A 0%, #3D2B24 40%, #4A352D 100%);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: 56px;
+  box-shadow: 0 8px 40px rgba(44, 32, 26, 0.20);
+  opacity: 0;
+  animation: fadeInUp .7s ease forwards;
+}
+.promoGlow {
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+.promoContent {
+  position: relative;
+  z-index: 1;
+  padding: 48px 48px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+}
+
+/* Badge */
+.promoBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(201, 169, 110, 0.12);
+  border: 1px solid rgba(201, 169, 110, 0.30);
+  color: var(--c-primary);
+  font-size: .7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  padding: 6px 16px;
+  border-radius: var(--r-full);
+  animation: floatBadge 3s ease-in-out infinite;
+}
+
+/* Title */
+.promoTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  font-weight: 600;
+  color: #F5EFE8;
+  line-height: 1.45;
+  max-width: 600px;
+  animation: fadeInUp .7s ease .1s both;
+}
+
+/* Description */
+.promoDesc {
+  font-size: .92rem;
+  color: #B5A59C;
+  line-height: 1.75;
+  max-width: 520px;
+  animation: fadeInUp .7s ease .15s both;
+}
+
+/* Offer row */
+.promoOffer {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeInUp .7s ease .2s both;
+}
+.promoDiscount {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--c-primary);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.promoLabel {
+  font-size: .9rem;
+  color: #C5B8AD;
+  font-weight: 500;
+}
+
+/* Coupon */
+.promoCoupon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(201, 169, 110, 0.08);
+  border: 1.5px dashed rgba(201, 169, 110, 0.35);
+  border-radius: var(--r-md);
+  padding: 10px 22px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp .7s ease .25s both;
+}
+.promoCoupon::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(201,169,110,.18) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+.couponLabel {
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #A89590;
+  position: relative;
+  z-index: 1;
+}
+.couponCode {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--c-primary);
+  background: none;
+  border: none;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* CTA Button */
+.promoBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--c-primary);
+  color: #2C1F1A;
+  font-size: .85rem;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: var(--r-full);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  transition: var(--t-smooth);
+  margin-top: 4px;
+  animation: fadeInUp .7s ease .3s both, pulseCta 2.5s ease-in-out 1s infinite;
+}
+.promoBtn:hover {
+  background: #D4B87A;
+  box-shadow: 0 8px 32px rgba(201, 169, 110, 0.40);
+  transform: translateY(-2px);
+  animation: fadeInUp .7s ease .3s both;
+}
+.promoArrow {
+  font-size: 1.1rem;
+  transition: transform .25s ease;
+}
+.promoBtn:hover .promoArrow {
+  transform: translateX(4px);
+}
+
+/* Tagline */
+.promoTagline {
+  font-size: .82rem;
+  color: #8A7A72;
+  font-weight: 500;
+  letter-spacing: .03em;
+  animation: fadeInUp .7s ease .35s both;
+}
+
+/* ── Responsive promo ── */
+@media (max-width: 600px) {
+  .promoContent {
+    padding: 36px 24px 32px;
+    gap: 14px;
+  }
+  .promoDiscount {
+    font-size: 2rem;
+  }
+  .promoTitle {
+    font-size: 1.15rem;
+  }
 }
 
 /* ── Note ── */
