@@ -1,14 +1,19 @@
+import { useEffect, useState } from 'react';
 import { treatments } from '../../data/treatments';
 import { config } from '../../config';
 import styles from './Treatments.module.css';
 
-const resultPhotos = [
-  { id: 'photo-1', src: '/foto1.jpg', label: 'Foto 1' },
-  { id: 'photo-2', src: '/foto2.jpg', label: 'Foto 2' },
-  { id: 'photo-3', src: '/foto3.jpg', label: 'Foto 3' },
-  // { id: 'photo-4', src: '/Foto_sobre_mim.jpg', label: 'Foto 4' },
-  // { id: 'photo-5', src: '/Foto_hero2.jpg', label: 'Foto 5' },
-  // { id: 'photo-6', src: '/Foto_sobre_mim.jpg', label: 'Foto 6' },
+const resultCases = [
+  {
+    id: 'case-1',
+    before: { src: '/antes1.jpg', label: 'Antes' },
+    after: { src: '/depois1.jpg', label: 'Depois' },
+  },
+  {
+    id: 'case-2',
+    before: { src: '/antes2.jpg', label: 'Antes' },
+    after: { src: '/depois2.jpg', label: 'Depois' },
+  },
 ];
 
 const faqs = [
@@ -36,6 +41,16 @@ const faqs = [
 
 export default function Treatments() {
   const regularTreatments = treatments.filter(t => t.icon !== 'piolho');
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
+
+  useEffect(() => {
+    const closeOnEscape = event => {
+      if (event.key === 'Escape') setSelectedPhoto(null);
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, []);
 
   return (
     <section id="tratamentos" className={styles.section}>
@@ -128,14 +143,37 @@ export default function Treatments() {
           </div>
 
           <div className={styles.resultsGrid}>
-            {resultPhotos.map(item => (
-              <figure key={item.id} className={styles.resultPhoto}>
-                <img src={item.src} alt={`${item.label} de resultado capilar`} />
-                <figcaption>{item.label}</figcaption>
-              </figure>
+            {resultCases.map((resultCase, caseIndex) => (
+              <article key={resultCase.id} className={styles.resultCase}>
+                <div className={styles.casePhotos}>
+                  {[resultCase.before, resultCase.after].map(photo => (
+                    <button
+                      key={photo.label}
+                      type="button"
+                      className={styles.resultPhoto}
+                      onClick={() => setSelectedPhoto({ ...photo, caseIndex })}
+                      aria-label={`Ampliar foto ${photo.label.toLowerCase()} do caso ${caseIndex + 1}`}
+                    >
+                      <img src={photo.src} alt={`${photo.label} do resultado capilar`} />
+                      <span>{photo.label}</span>
+                    </button>
+                  ))}
+                </div>
+                <p className={styles.expandHint}>Toque para ampliar</p>
+              </article>
             ))}
           </div>
         </div>
+
+        {selectedPhoto && (
+          <div className={styles.photoModal} role="dialog" aria-modal="true" aria-label="Foto ampliada" onClick={() => setSelectedPhoto(null)}>
+            <div className={styles.modalContent} onClick={event => event.stopPropagation()}>
+              <img src={selectedPhoto.src} alt={`${selectedPhoto.label} do resultado capilar ampliado`} />
+              <span className={styles.modalLabel}>{selectedPhoto.label}</span>
+              <button type="button" className={styles.closeModal} onClick={() => setSelectedPhoto(null)} aria-label="Fechar foto ampliada">×</button>
+            </div>
+          </div>
+        )}
 
         <div className={styles.faqSection}>
           <div className={styles.faqIntro}>
