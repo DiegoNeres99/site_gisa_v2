@@ -14,6 +14,11 @@ const resultCases = [
     before: { src: '/antes2.jpg', label: 'Antes' },
     after: { src: '/depois2.jpg', label: 'Depois' },
   },
+  {
+    id: 'case-3',
+    before: { src: '/antes3.jpg', label: 'Antes' },
+    after: { src: '/depois3.jpg', label: 'Depois' },
+  }
 ];
 
 const faqs = [
