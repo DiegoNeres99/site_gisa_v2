@@ -109,8 +109,8 @@ export default function Treatments() {
             </p>
 
             <div className={styles.licePoints}>
-              <span>Roteiro passo a passo</span>
-              <span>Vídeos demonstrativos</span>
+              <span>Passo a passo completo</span>
+              <span>Vídeo demonstrativo do processo</span>
               <span>Cuidados com roupas e ambientes</span>
               <span>Links de produtos recomendados</span>
               <span>Prevenção para escola e família</span>
