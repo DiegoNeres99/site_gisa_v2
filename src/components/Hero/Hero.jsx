@@ -28,12 +28,12 @@ export default function Hero() {
         {/* ── Left: copy ── */}
         <div className={styles.copy}>
           <a
-            href="#tratamentos"
+            href="#"
             className={styles.ebookAlert}
-            onClick={e => { e.preventDefault(); document.querySelector('#tratamentos')?.scrollIntoView({ behavior:'smooth' }); }}
+            onClick={e => { e.preventDefault(); document.querySelector('#')?.scrollIntoView({ behavior:'smooth' }); }}
           >
             <span className={styles.alertIcon}>!</span>
-            <span>Ebook antipolho chegando na Hotmart</span>
+            <span>Quero garantir meu Ebook</span>
           </a>
 
           <span className="section-eyebrow">
@@ -59,10 +59,10 @@ export default function Hero() {
               <WaIcon />
               Agendar Avaliação
             </a>
-            <a href="#tratamentos" className={styles.btnSecondary}
+            {/* <a href="#tratamentos" className={styles.btnSecondary}
                onClick={e => { e.preventDefault(); document.querySelector('#tratamentos')?.scrollIntoView({ behavior:'smooth' }); }}>
               Ver Ebook Antipolho
-            </a>
+            </a> */}
           </div>
 
           {/* ── Stats strip ── */}

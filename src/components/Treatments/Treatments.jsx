@@ -93,14 +93,8 @@ export default function Treatments() {
         <div className={styles.liceFeature}>
           <div className={styles.liceGlow} aria-hidden="true" />
 
-          <div className={styles.ebookMockup} aria-hidden="true">
-            <div className={styles.ebookCover}>
-              <span className={styles.ebookKicker}>Ebook exclusivo</span>
-              <strong>Missão Couro Cabeludo Livre</strong>
-              <span>Guia antipolho para famílias</span>
-              {/* <div className={styles.coverSeal}>Hotmart</div> */}
-            </div>
-            <div className={styles.ebookPages} />
+          <div className={styles.ebookMockup}>
+            <img src="/ebook.jpg" alt="Ebook Piolho Nunca Mais – Guia antipolho para famílias" className={styles.ebookImg} />
           </div>
 
           <div className={styles.liceCopy}>
@@ -116,8 +110,9 @@ export default function Treatments() {
 
             <div className={styles.licePoints}>
               <span>Roteiro passo a passo</span>
-              <span>Checklist de pente fino</span>
+              <span>Vídeos demonstrativos</span>
               <span>Cuidados com roupas e ambientes</span>
+              <span>Links de produtos recomendados</span>
               <span>Prevenção para escola e família</span>
             </div>
 
@@ -128,7 +123,7 @@ export default function Treatments() {
                 rel="noopener noreferrer"
                 className={styles.liceBtn}
               >
-                Quero o ebook na Hotmart
+                Quero garantir meu Ebook
               </a>
               <p className={styles.liceNote}>
                 Link de compra editável em <strong>config.js</strong>.
