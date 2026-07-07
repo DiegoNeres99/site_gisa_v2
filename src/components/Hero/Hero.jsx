@@ -42,7 +42,7 @@ export default function Hero() {
           </span>
 
           <h1 className={styles.title}>
-            Seu cabelo merece um tratamento{' '}
+            Gisa Saúde Capilar: seu cabelo merece um tratamento{' '}
             <em className={styles.em}>especializado.</em>
           </h1>
 
