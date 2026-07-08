@@ -28,9 +28,10 @@ export default function Hero() {
         {/* ── Left: copy ── */}
         <div className={styles.copy}>
           <a
-            href="#"
+            href="https://pay.kiwify.com.br/ZsOGT2P"
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.ebookAlert}
-            onClick={e => { e.preventDefault(); document.querySelector('#')?.scrollIntoView({ behavior:'smooth' }); }}
           >
             <span className={styles.alertIcon}>!</span>
             <span>Quero garantir meu Ebook</span>

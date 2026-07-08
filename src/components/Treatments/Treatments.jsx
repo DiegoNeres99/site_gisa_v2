@@ -124,10 +124,7 @@ export default function Treatments() {
                 className={styles.liceBtn}
               >
                 Quero garantir meu Ebook
-              </a>
-              <p className={styles.liceNote}>
-                Link de compra editável em <strong>config.js</strong>.
-              </p>
+              </a>              
             </div>
           </div>
         </div>

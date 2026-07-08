@@ -34,7 +34,7 @@ export const config = {
   },
 
   hotmart: {
-    liceEbookLink: '#hotmart-link-piolho',
+    liceEbookLink: 'https://piolho-nunca-mais.vercel.app/',
   },
 
   address: {
